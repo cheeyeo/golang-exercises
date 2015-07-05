@@ -49,6 +49,28 @@ func main(){
 }
 
 ```
+a solution without sort:
+```go
+package main
+
+import "fmt"
+
+func greatest(x ...int) int{
+  r := x[0]
+  for _, i := range x{
+    if i > r {
+      r = i
+    }
+  }
+  return r
+}
+func main() {
+  fmt.Println(greatest(5,6,7,8,9,10,1)) 
+  myarray := []int{1,2,1,2,4,5,1,1}
+  fmt.Println(greatest(myarray...))
+}
+                                                                      
+```
 
 4. Using makeEvenGenerator as an example,write a makeOddGenerator function that generates odd numbers.
 
